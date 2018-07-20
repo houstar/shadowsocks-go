@@ -529,7 +529,7 @@ func managerDaemon(conn *net.UDPConn) {
 		timer := time.Tick(10 * time.Second)
 		for {
 			<-timer
-			switch {
+			select {
 			case <-ctx:
 				return
 			default:
